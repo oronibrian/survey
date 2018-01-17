@@ -95,8 +95,8 @@ def privacy(request):
 def sendsms(request):
     # Specify your login credentials
         for user in Mail.objects.all():
-                username = "adamz78"
-                apikey   = "eb8c8297fddbbc6104ffc379a64170085fc6e6e1921a7165f83ae83402546918"
+                username = "" 
+                apikey   = ""
 
                 # Please ensure you include the country code (+254 for Kenya in this case)
                 to      = "+254702357053"
