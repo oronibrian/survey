@@ -1,0 +1,16 @@
+{% block subject %}
+Hello {{ user.name }}
+{% endblock %}
+
+{% block body %}
+{% endblock %}
+
+{% block html %}
+I   am  writing to  you to  request your    participation   in  a   brief
+survey.
+The survey  is  very    brief   and will    only    take    about   5   minutes to
+complete.   Please  click   the link    below   to  go  to  the survey  Web
+site<br>
+
+ <strong><a href="http://oroni.pythonanywhere.com/survey/{{getvars}}/">Take survey</a></strong> .
+{% endblock %}

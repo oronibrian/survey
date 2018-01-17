@@ -1,0 +1,110 @@
+{% extends "home.html" %}
+{% load chartit %}
+{% load static %}
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-orange.min.css">
+ <script src="https://code.highcharts.com/highcharts.js"></script>
+
+
+{% block body %}
+    {{ chart_list|load_charts:"chart_3,chart_4,chart_5" }}
+
+<body>
+<style>
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+</style>
+
+<div class="card">
+  <div class="container">
+        <div id="chart_5" class="container">Response gender  chart will be rendered here</div>
+
+  </div>
+</div>
+
+<div class="card">
+  <div class="container">
+    <div id="chart_4"  class="container">First chart will be rendered here</div>
+
+  </div>
+</div>
+
+<div class="card">
+  <div class="container">
+    <div id="chart_3" class="container">Second chart will be rendered here</div>
+
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="container">
+{% load chart_tags %}
+{% chart %}
+    http://chart.apis.google.com/chart
+       ?chxr=0,0,100
+       &chxt=y
+       &chbh=a
+       &chs=440x220
+       &cht=bvs
+       &chco=4D89F9
+       &chds=0,160
+       &chd=t:{{male}},{{female}}
+       &chtt=Male + vs + Female + Users
+{% endchart %}
+  </div>
+</div>
+
+
+
+
+
+</br>
+{%for category in categories%}
+
+
+</br>
+{%endfor%}
+
+<div class="card">
+  <div class="container">
+    Total Survey: {{surveytotal}}
+
+  </div>
+</div>
+<div class="card">
+  <div class="container">
+    Total Rensponse {{total_resp}}
+
+  </div>
+</div>
+<div class="card">
+  <div class="container">
+    Total male {{male}}
+
+  </div>
+</div>
+
+<div class="card">
+  <div class="container">
+    Total Female  {{female}}
+
+  </div>
+</div>
+
+</body>
+
+
+
+{% endblock %}

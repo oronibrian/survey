@@ -1,0 +1,49 @@
+{% extends "home.html" %}
+{% load chartit %}
+{% load static %}
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-orange.min.css">
+ <script src="https://code.highcharts.com/highcharts.js"></script>
+
+
+{% block body %}
+<ul>
+
+<style>
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+</style>
+
+<div class="card">
+  <div class="container">
+    <h4><b>Questions Answered Yes</b></h4>
+    <p>Number of questions with yes answer</p>
+    {{resresponse}}
+  </div>
+</div>
+
+<div class="card">
+  <div class="container">
+    <h4><b>Questions Answered No</b></h4>
+    <p>Number of questions with no answer</p>
+    {{noresponse}}
+  </div>
+</div>
+
+</ul>
+
+
+
+
+{% endblock %}
